@@ -8,7 +8,7 @@ def game_analysis(data_list):
         cube_showings = game.split(",")
         for show in cube_showings:
             value, color = show.strip().split(" ")
-            # update the value of dictionary key if the value is lower than a new value
+            # update the value of dictionary key if the new value is higher than the old value
             if color in cube_dict:
                 if int(value) > cube_dict[color]:
                     cube_dict[color] = int(value)
