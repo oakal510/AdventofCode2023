@@ -26,7 +26,7 @@ def fewest_cubes_calculation(file):
 
     cube_powers_sum = 0
 
-    for i, line in enumerate(file):
+    for line in file:
         game_data = line.split(":")
         cube_powers_sum += game_analysis(game_data[1]) 
     
