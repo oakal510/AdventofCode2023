@@ -13,7 +13,6 @@ def score_scratchers(buffer):
         winning_numbers = [int(n) for n in winning_numbers.split(" ") if n != ""]
         scratcher_numbers = [int(n) for n in scratcher_numbers.split(" ") if n != ""]
 
-
         count = 1
             
         for winning_number in winning_numbers:
