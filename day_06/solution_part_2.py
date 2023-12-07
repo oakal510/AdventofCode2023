@@ -1,6 +1,6 @@
-# advent of code day 6, part 1
+# advent of code day 6, part 2
 
-def calculate_product_of_wins(buffer):
+def calculate_wins(buffer):
 
     values = buffer.splitlines()
     time = ''
@@ -37,11 +37,11 @@ def test_solution():
     with open('test_input.txt', 'r') as file:
         buffer = file.read()
     
-    assert calculate_product_of_wins(buffer) == 71503
+    assert calculate_wins(buffer) == 71503
 
 
 if __name__ == "__main__":
 
     with open('input.txt', 'r') as file:
         buffer = file.read()
-        print(calculate_product_of_wins(buffer))
+        print(calculate_wins(buffer))
