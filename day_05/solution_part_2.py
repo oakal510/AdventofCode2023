@@ -1,4 +1,4 @@
-# solution to Advent of Code day 5 part 1
+# solution to Advent of Code day 5 part 2
 
 import pprint
 
