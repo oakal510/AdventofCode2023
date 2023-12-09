@@ -9,7 +9,7 @@ def calculate_steps(buffer):
 
     while location != "ZZZ":
         for direction in directions:
-            # run direcitons until the destintation is reached
+            # run directions until the destintation is reached
             if location != "ZZZ":
                 if direction == "L":
                     location = locations_dict[location]["left"]
