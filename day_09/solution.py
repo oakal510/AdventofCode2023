@@ -18,7 +18,7 @@ def recursive_extrapolation(sequence, last_value, new_value):
 
     new_value += last_value
 
-    if len(set(sequence)) != 1 or 0 not in sequence:
+    if set(sequence) != {0}:
 
         difference_list = []
 
@@ -32,7 +32,6 @@ def recursive_extrapolation(sequence, last_value, new_value):
         return new_value
 
             
-
 def parse(data):
 
     oasis_data = []
