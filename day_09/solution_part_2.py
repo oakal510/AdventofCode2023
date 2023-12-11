@@ -1,4 +1,4 @@
-# day 9, part 1
+# day 9, part 2
 
 def sum_extrapolated_values(buffer):
     
@@ -7,17 +7,15 @@ def sum_extrapolated_values(buffer):
     sum_of_new_values = 0
 
     for sequence in oasis_data:
-        new_value = recursive_extrapolation(sequence, sequence[-1], 0)
+        new_value = recursive_extrapolation(sequence, sequence[0], 0)
         sum_of_new_values += new_value
 
     return sum_of_new_values
 
 
-# write a recursive function that extrapolates the values of the sequence
-def recursive_extrapolation(sequence, last_value, new_value):
-
-    new_value += last_value
-
+# recursive function that extrapolates the values of the sequence
+def recursive_extrapolation(sequence, start_value, new_value):
+    
     if set(sequence) != {0}:
 
         difference_list = []
@@ -26,12 +24,14 @@ def recursive_extrapolation(sequence, last_value, new_value):
             if i < len(sequence) - 1:
                 difference_list.append(sequence[i+1] - value)
 
-        return recursive_extrapolation(difference_list, difference_list[-1], new_value)
+        new_value =  start_value - recursive_extrapolation(difference_list, difference_list[0], new_value)
+        
+        return new_value
     
     else:
         return new_value
-
             
+
 def parse(data):
 
     oasis_data = []
@@ -53,7 +53,7 @@ def test_sum_extrapolated_values():
                 1 3 6 10 15 21
                 10 13 16 21 30 45 """
                 
-    assert sum_extrapolated_values(buffer) == 114
+    assert sum_extrapolated_values(buffer) == 2
 
 
 if __name__ == "__main__":
