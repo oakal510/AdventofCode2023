@@ -1,4 +1,4 @@
-# advent of code day 7, part 1
+# advent of code day 7, part 2
 
 class Game_hand:
     def __init__(self, game_hand, bid):
